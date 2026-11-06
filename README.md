@@ -4,8 +4,6 @@
 
 [Read the paper (PDF)](paper/rich-word-counting.pdf) · [TeX source](paper/rich-word-counting.tex) · [Main Lean theorems](RichWords/AsymptoticProofs.lean)
 
-[Hexagon submission source ZIP](paper/hexagon-source.zip)
-
 Let $R_2(n)$ count binary rich words of length $n$. We prove
 
 $$\limsup_{n\to\infty}\frac{\log R_2(n)}{\sqrt n\log n}=\infty.$$
