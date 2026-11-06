@@ -34,12 +34,14 @@ concatenation construction and a binary gap encoding.
 \section{The result}
 
 Let $R_2(n)$ count rich words of length $n$ over $\{0,1\}$.
-Guo, Shallit, and Shur~\cite{GSS} conjectured the bound
+Guo, Shallit, and Shur~\cite[Conjecture~1]{GSSpre} conjectured the bound
 \begin{equation}\label{eq:conjecture}
  R_2(n)=O\!\left(\left(\frac{n}{g(n)}\right)^{\sqrt n}\right)
  \qquad\text{for some positive }g(n)\longrightarrow\infty.
 \end{equation}
 This formulation also appears in~\cite[Section~1]{Ruk}.
+Using run-length constructions, Guo, Shallit, and Shur~\cite{GSS}
+obtained a lower bound exponential in $\sqrt n$.
 
 \begin{theorem}\label{thm:main}
 The binary rich-word counting function satisfies
@@ -71,6 +73,9 @@ first. All logarithms are natural.
 
 \section{Ordered concatenation}
 
+We use the standard facts that a word $w$ has at most $|w|+1$ distinct
+palindromic factors and that every factor of a rich word is rich
+\cite[Proposition~2.1 and Corollary~2.5]{GJW}.
 Write $\Pal(w)$ for the set of palindromic factors of $w$, including
 $\varepsilon$, and $D(w)=|w|+1-|\Pal(w)|$ for its palindromic defect.
 For a set $S$ of letters, let $|w|_S$ count the positions of $w$ carrying
@@ -232,9 +237,9 @@ Since $N_{s,k}\to\infty$ and $k$ is arbitrary, the theorem follows.
 
 \paragraph{Formal verification.}
 Theorem~\ref{thm:main} and the negation of \eqref{eq:conjecture} have
-also been formalized in Lean~4, using the product construction and
-explicit integer bounds for the scaled profiles above. The formalization
-and paper source are available at
+also been formalized in Lean~4 using Mathlib. The formal proof uses the
+product construction and explicit integer bounds for the scaled profiles above.
+The formalization and paper source are available at\\
 \url{https://github.com/glasss13/rich-word-counting}.
 
 \paragraph{Acknowledgment.}
@@ -247,6 +252,11 @@ A.~Glen, J.~Justin, S.~Widmer, and L.~Q.~Zamboni,
 Palindromic richness,
 \emph{European Journal of Combinatorics} \textbf{30}(2) (2009), 510--531.
 \href{https://doi.org/10.1016/j.ejc.2008.04.006}{doi:10.1016/j.ejc.2008.04.006}.
+
+\bibitem{GSSpre}
+C.~Guo, J.~Shallit, and A.~M.~Shur,
+On the combinatorics of palindromes and antipalindromes,
+arXiv preprint \href{https://arxiv.org/abs/1503.09112v1}{arXiv:1503.09112v1} (2015).
 
 \bibitem{GSS}
 C.~Guo, J.~Shallit, and A.~M.~Shur,
