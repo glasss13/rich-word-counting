@@ -1,0 +1,261 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={On a counting conjecture for binary rich words},pdfauthor={Max Glass}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Pal}{\mathcal P}
+\newcommand{\Alphab}{\operatorname{alph}}
+\title{On a counting conjecture for binary rich words}
+\author{Max Glass}
+\date{November 6, 2026}
+
+\begin{document}
+\maketitle
+\vspace{-2em}
+\begin{abstract}
+Let $R_2(n)$ denote the number of binary rich words of length $n$.
+We prove that
+\[
+ \limsup_{n\to\infty}\frac{\log R_2(n)}{\sqrt n\log n}=\infty.
+\]
+Consequently, $R_2(n)$ is not $O(n^{C\sqrt n})$ for any fixed $C>0$,
+disproving the conjectured upper bound
+$O((n/g(n))^{\sqrt n})$ with $g(n)\to\infty$.
+The proof combines independent permutation families through an ordered
+concatenation construction and a binary gap encoding.
+\end{abstract}
+
+\section{The result}
+
+Let $R_2(n)$ count rich words of length $n$ over $\{0,1\}$.
+Guo, Shallit, and Shur~\cite{GSS} conjectured the bound
+\begin{equation}\label{eq:conjecture}
+ R_2(n)=O\!\left(\left(\frac{n}{g(n)}\right)^{\sqrt n}\right)
+ \qquad\text{for some positive }g(n)\longrightarrow\infty.
+\end{equation}
+This formulation also appears in~\cite[Section~1]{Ruk}.
+
+\begin{theorem}\label{thm:main}
+The binary rich-word counting function satisfies
+\[
+ \limsup_{n\to\infty}\frac{\log R_2(n)}{\sqrt n\log n}=\infty.
+\]
+\end{theorem}
+
+\begin{corollary}\label{cor:conjecture}
+For every $C>0$, $R_2(n)\ne O(n^{C\sqrt n})$.
+In particular, \eqref{eq:conjecture} is false.
+\end{corollary}
+\begin{proof}
+An eventual bound $R_2(n)\le K n^{C\sqrt n}$ would give a limsup at most $C$.
+Since $g(n)\ge1$ eventually, \eqref{eq:conjecture} would imply such a
+bound with $C=1$.
+\end{proof}
+
+The construction starts with $r!$ rich blocks of length $O(r^2)$.
+To multiply the choices, we place successive blocks on disjoint ordered
+pairs of letters and then encode the resulting word by binary gaps.
+The encoding charges $O(jr_j^2)$ for block $j$, suggesting parameters
+$r_j$ proportional to $1/j$. We implement this choice dyadically:
+$2^t$ blocks of parameter $2s\,2^{k-t}$ at level $t$. Each level has
+length cost $O(s^2 4^k)$ and contributes at least $s2^k\log s$ to the
+logarithm of the count. Summing over $k+1$ levels gives a lower bound of
+order $\sqrt{k+1}$ for the normalized logarithm, with $s\to\infty$
+first. All logarithms are natural.
+
+\section{Ordered concatenation}
+
+Write $\Pal(w)$ for the set of palindromic factors of $w$, including
+$\varepsilon$, and $D(w)=|w|+1-|\Pal(w)|$ for its palindromic defect.
+For a set $S$ of letters, let $|w|_S$ count the positions of $w$ carrying
+letters of $S$, and put
+\[
+ \begin{aligned}
+ I_S(w)&=\{p\in\Pal(w):apb\text{ is a factor of }w
+                    \text{ for some }a,b\in S\},\\
+ \sigma_S(w)&=\max\{|w|_S-1,0\}-|I_S(w)|.
+ \end{aligned}
+\]
+The two endpoint letters need not coincide. We abbreviate $I_{\{b\}}$
+to $I_b$. If $w$ is rich and $b$ occurs in $w$, then
+\begin{equation}\label{eq:singleton}
+ |I_b(w)|=|w|_b-1.
+\end{equation}
+Each position carrying $b$ first introduces exactly one palindrome ending
+in $b$; these are $b$ and the words $bpb$ with $p\in I_b(w)$
+\cite[proof of Proposition~2.7]{GJW}.
+
+If all letters are marked and $|w|\ge2$, then
+$I_{\Alphab(w)}(w)$ is the set of palindromes in $w$ with its first and last
+letters deleted. Thus $\sigma_{\Alphab(w)}(w)=0$ for rich $w$, also when
+$|w|\le1$.
+
+For a word $d=a_1\cdots a_m$ of nonnegative integers, define
+\[
+ G(d)=0\,1^{a_1}0\,1^{a_2}0\cdots1^{a_m}0,
+ \qquad G(\varepsilon)=0.
+\]
+For nonempty $d$, with $M=\max_i a_i$ and $S_h=\{a:a\ge h\}$, one has
+\begin{equation}\label{eq:defect}
+ D(G(d))=D(d)+\sum_{h=1}^{M}\sigma_{S_h}(d).
+\end{equation}
+To see this, the nonempty zero-ended palindromes are exactly $G(p)$,
+$p\in\Pal(d)$. The one-ended palindromes are $1,\ldots,1^M$ and
+$1^hG(p)1^h$ with $p\in I_{S_h}(d)$. Parsing at zeros makes these
+classes disjoint and exhaustive. Hence
+\[
+ |\Pal(G(d))|=1+|\Pal(d)|+M+\sum_{h=1}^{M}|I_{S_h}(d)|.
+\]
+Now use $|G(d)|=1+m+\sum_i a_i$ and
+$\sum_{h=1}^{M}|d|_{S_h}=\sum_i a_i$.
+
+\begin{lemma}\label{lem:concat}
+Let $q\ge1$ and let $z_1,\ldots,z_q$ be nonempty binary words ending in $1$, with
+$z_j1$ rich for every $j$. Relabel $0,1$ in $z_j$ as $2j-2,2j-1$,
+respectively, obtaining $B_j$. Then $G(B_1\cdots B_q)$ is rich.
+\end{lemma}
+\begin{proof}
+Put $d=B_1\cdots B_q$. Each block is rich, and their alphabets are
+pairwise disjoint. No nonempty palindrome crosses a block boundary,
+so $d$ is rich. We show that every term in \eqref{eq:defect} vanishes.
+
+At an even threshold $h=2j-2$, the marked positions form the entire
+rich suffix $B_j\cdots B_q$, so the marked deficit is zero.
+At an odd threshold $h=2j-1$, put $U=B_j$, $b=2j-1$, and
+$V=B_{j+1}\cdots B_q$. Only $b$ is marked in $U$, and all letters
+are marked in $V$. If $V$ is empty, use \eqref{eq:singleton}.
+Otherwise, writing $V^-$ for $V$ with its last letter deleted,
+\begin{equation}\label{eq:boundary}
+ I_{\{b\}\cup\Alphab(V)}(UV)=I_b(Ub)\cup\Pal(V^-).
+\end{equation}
+For an interior contained in $U$, the first letter of $V$ can replace
+the auxiliary final $b$ in $Ub$. For an interior contained in $V$,
+the last letter of $U$ supplies a left endpoint. No nonempty palindrome
+crosses the disjoint-alphabet boundary. These observations give
+\eqref{eq:boundary}. Its two sets intersect only in $\varepsilon$,
+which belongs to both since $Ub$ ends in $bb$.
+As $Ub$ and $V^-$ are rich, the union has
+$|U|_b+|V|-1$ elements. The marked deficit is therefore zero.
+Earlier blocks contain no marked positions and do not affect these
+interiors. Equation~\eqref{eq:defect} completes the proof.
+\end{proof}
+
+\section{A product lower bound}
+
+\begin{lemma}\label{lem:permutation}
+For each $r\ge1$ there are $r!$ distinct binary words $z$ ending in $1$
+such that $z1$ is rich and
+\begin{equation}\label{eq:composition}
+ |z|=L_r:=\frac{5r^2+9r+4}{2},\qquad |z|_1=(r+1)^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a permutation $p=(p_1,\ldots,p_r)$ of $1,\ldots,r$, put $H=r+1$ and
+\[
+ W_p=0\,1^H\prod_{i=1}^{r}(0^i1^{p_i}0^i1^H)\,0^r.
+\]
+The following nonempty palindromic factors occur in $W_p$:
+\[
+\begin{array}{ll}
+ 0^t,\quad 0^t1^H0^t & 1\le t\le r,\\
+ 0^t1^{p_i}0^t & 1\le i\le r,\quad 1\le t\le i,\\
+ 0^t1^H0^i1^{p_i}0^i1^H0^t
+   & 1\le i\le r,\quad 1\le t\le\max\{1,i-1\},\\
+ 1^t & 1\le t\le H,\\
+ 1^t0^i1^t & 1\le i\le r,\quad 1\le t\le p_i,\\
+ 1^t0^i1^{p_i}0^i1^t & 1\le i\le r,\quad 1\le t\le H.
+\end{array}
+\]
+In the third row, the zero-run before the left $1^H$ has length $1$
+when $i=1$ and $i-1$ otherwise; the zero-run on the right is at least
+as long. This gives the stated range of $t$.
+The run patterns, $p_i<H$, and the distinct values $p_i$ distinguish
+all the listed words. Their total number is $L_r=|W_p|$, so $W_p$ is rich.
+Its longest zero-run has length $r$; appending one zero adds the new
+palindrome $0^{r+1}$. Thus $W_p0$ is rich.
+The permutation is recoverable from the successive short one-runs,
+and $|W_p|_0=(r+1)^2$. Taking $z$ to be the bitwise complement of $W_p$
+gives the assertion.
+\end{proof}
+
+\begin{proposition}\label{prop:product}
+For $q\ge1$ and positive integers $r_1,\ldots,r_q$, define
+\[
+ N=1+\sum_{j=1}^{q}\bigl((2j-1)L_{r_j}+(r_j+1)^2\bigr).
+\]
+Then $R_2(N)\ge\prod_{j=1}^{q}r_j!$.
+\end{proposition}
+\begin{proof}
+Choose the words in Lemma~\ref{lem:permutation} independently and apply
+Lemma~\ref{lem:concat}. A zero of block $j$ contributes $2j-1$ letters
+to the gap encoding, and a one contributes $2j$, giving the stated
+common length. Parsing at zeros recovers the integer word; the value
+$\lfloor a/2\rfloor$ identifies the block containing each integer $a$.
+Thus every permutation is recoverable, and all outputs are distinct.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Fix $k\ge0$. For integers $s\ge2$, take $q=2^{k+1}-1$ and
+\[
+ r_j=2s\,2^{k-t}\qquad(2^t\le j<2^{t+1},\quad 0\le t\le k),
+\]
+and denote the length in Proposition~\ref{prop:product} by $N_{s,k}$.
+Since $(2u)!\ge s^u$ for $u\ge s$, that proposition gives
+\begin{equation}\label{eq:count}
+ \log R_2(N_{s,k})\ge (k+1)s2^k\log s.
+\end{equation}
+Also $L_r\le9r^2$ and $(r+1)^2\le4r^2$ for $r\ge1$.
+The $2^t$ blocks at level $t$ have total length contribution at most
+\[
+ 2^t(9\cdot2^{t+2}+4)(2s\,2^{k-t})^2
+ \le160s^2 4^k.
+\]
+The first block also gives $N_{s,k}\ge s$. Thus
+\begin{equation}\label{eq:length}
+ s\le N_{s,k}\le200(k+1)s^2 4^k+1.
+\end{equation}
+Letting $s\to\infty$ at fixed $k$ in
+\eqref{eq:count}--\eqref{eq:length} gives
+\[
+ \liminf_{s\to\infty}
+ \frac{\log R_2(N_{s,k})}{\sqrt{N_{s,k}}\log N_{s,k}}
+ \ge \frac{\sqrt{k+1}}{2\sqrt{200}}.
+\]
+Since $N_{s,k}\to\infty$ and $k$ is arbitrary, the theorem follows.
+\end{proof}
+
+\paragraph{Formal verification.}
+Theorem~\ref{thm:main} and the negation of \eqref{eq:conjecture} have
+also been formalized in Lean~4, using the product construction and
+explicit integer bounds for the scaled profiles above. The formalization
+and paper source are available at
+\url{https://github.com/glasss13/rich-word-counting}.
+
+\paragraph{Acknowledgment.}
+GPT-6 Astra (OpenAI) was used for the main proof construction and drafting
+of this paper.
+
+\begin{thebibliography}{9}
+\bibitem{GJW}
+A.~Glen, J.~Justin, S.~Widmer, and L.~Q.~Zamboni,
+Palindromic richness,
+\emph{European Journal of Combinatorics} \textbf{30}(2) (2009), 510--531.
+\href{https://doi.org/10.1016/j.ejc.2008.04.006}{doi:10.1016/j.ejc.2008.04.006}.
+
+\bibitem{GSS}
+C.~Guo, J.~Shallit, and A.~M.~Shur,
+Palindromic rich words and run-length encodings,
+\emph{Information Processing Letters} \textbf{116}(12) (2016), 735--738.
+\href{https://doi.org/10.1016/j.ipl.2016.07.001}{doi:10.1016/j.ipl.2016.07.001}.
+
+\bibitem{Ruk}
+J.~Rukavicka, Subexponential upper bound on the number of rich words,
+arXiv preprint \href{https://arxiv.org/abs/2511.11069v3}{arXiv:2511.11069v3} (2026).
+\end{thebibliography}
+\end{document}

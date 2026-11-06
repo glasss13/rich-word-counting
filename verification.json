@@ -1,0 +1,1283 @@
+{
+  "status": "passed",
+  "toolchain": "leanprover/lean4:v4.30.0",
+  "elapsed_seconds": 54.775,
+  "source_sha256": {
+    "RichWords/AsymptoticDefinitions.lean": "248c6b76a566e8759223ae201e500075f5c65acb3df66dfeb9ed3e23135397e4",
+    "RichWords/AsymptoticProofs.lean": "5130a5a9f55c2e502bacb61ceedf0a7ee6b03ae73bfbdf7e49cda20867314c33",
+    "RichWords/DefectCoordinateDefinitions.lean": "2196e3b296c528144ca4e1551e17f397c151e035792551feed55853b3deff12c",
+    "RichWords/DefectCoordinateProofs.lean": "4ddfa182c7f84c5e842aa5f6997c40f70d65b5105046d069ac371b1176f53ee7",
+    "RichWords/Definitions.lean": "59a9518ab758181c51212fd2f44c3cf9757f69e9541c9b314ea88ab3fa00cf4d",
+    "RichWords/FramedGapDefinitions.lean": "799d3eb0a5ba48d3f73ec6b6970f66776f8126c4667149c17048c8c2b6b18a8f",
+    "RichWords/FramedGapProofs.lean": "f85f134f74ab3db2f8f9da819a6a304d5facf3cb68b9ba3f465f0188973ef492",
+    "RichWords/GapProofs.lean": "e78c874e343ba11a928004e1c9906acee2eead399a584c9399ba49f091b3bb40",
+    "RichWords/LeafContractionDefinitions.lean": "f5e05eb076ef28b27c719811323febf3930110eb639e3ded513e24625e8df990",
+    "RichWords/LeafContractionProofs.lean": "63f56b95308a2ed42a45280c1fe4fa804a90e984c0e69353a9207f5d9f6d1fb2",
+    "RichWords/MarkedDefinitions.lean": "eb4a04c07999ba4944871a41468c1de57a16edc4e4fdd0e9cdf333efda386155",
+    "RichWords/MarkedFactorProofs.lean": "90967805cedac8cf97718bfe95156b35d887c4b88ce05cd521133e73b49ac451",
+    "RichWords/MarkedProofs.lean": "ac4bb917c51214b9b04a51dc6e4e2af81559093d2f04032e45bbd84eae1f339e",
+    "RichWords/OccurrenceDefinitions.lean": "b5ea36ee2ec1fb958fe958d54ccfae2a48358758a08d7d049ff8f37d24ab6f87",
+    "RichWords/OccurrenceProofs.lean": "56351c9c2852597169eaa2dde937c99683e53c812016db9b3c954e099ede323e",
+    "RichWords/OrderedCountDefinitions.lean": "88c4904e96f30fa47bac318e996e3d7366a5261a28d68cfc86a089f35661c2ad",
+    "RichWords/OrderedCountProofs.lean": "ad7bc3d3f6afaea5df1dc26bd450ac7aea42f655d6f4c0ab203bd6973ee89ab4",
+    "RichWords/OrderedGlueDefinitions.lean": "855f4173164a6341ea976032043845b06e25be95b04be6f8ad9870e177a7a3ee",
+    "RichWords/OrderedGlueProofs.lean": "6fed7b1459bb3ba85a40f0be94b80ae99c0daad389d994b57685fe5eab5ff188",
+    "RichWords/PermutationDefinitions.lean": "b9e95628849a9c4a50b949aca20765cef91e97e358170b294c435d6bba515996",
+    "RichWords/PermutationProofs.lean": "ae207f032e559af59d1c87f2b7367d6fb27fe9c74af0376cef4bb77d51b9d696",
+    "RichWords/PrefixProofs.lean": "dd01f1d83bd4ef1422b044d25ceb383c8d9d2ee5c86f8879d06d83b705ca80a8",
+    "RichWords/Proofs.lean": "52950ddc43b35c1a75d0961adbee5e84e6a208bc336feaadb81eea30edaf647d",
+    "RichWords/ProtectedDefinitions.lean": "e61d9ba68938bb63afb6d4c6b3205d77cb7cc627db5f76d1eefb36340550474c",
+    "RichWords/ProtectedProofs.lean": "c074ad58df6af8923b50cb2c81a9ba5e60e82af5474dd0bb53ecace42eef8968",
+    "RichWords.lean": "b2e374aa2d0f0522a388894de3702406c4bbbdbf823144757aa31cea3beefa04"
+  },
+  "axioms": {
+    "RichWords.asymptotic_factorial_eq": [
+      "propext"
+    ],
+    "RichWords.asymptotic_factorial_lower": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.asymptotic_product_append": [
+      "propext"
+    ],
+    "RichWords.asymptotic_product_replicate": [
+      "propext"
+    ],
+    "RichWords.asymptotic_mass_append": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.asymptotic_mass_replicate": [
+      "propext"
+    ],
+    "RichWords.asymptotic_block_size_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.asymptotic_block_ones_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.scaled_dyadic_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.scaled_dyadic_count_lower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.scaled_dyadic_level_mass_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.scaled_dyadic_mass_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.scaled_dyadic_length_lower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.scaled_dyadic_length_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.scaled_dyadic_rich_lower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_count_integer_growth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_count_exceeds_sqrt_power": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_counting_conjecture_false": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_count_no_sqrt_power_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_count_normalized_log_unbounded": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_count_divergent_subsequence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.palindrome_suffix_count_le_occurrences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.singleton_suffix_occurrence_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.singleton_palindrome_count_le_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.sum_map_add_nat": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.sum_equality_indicators": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.sum_map_zero_nat": [
+      "propext"
+    ],
+    "RichWords.sum_counts_over_cover": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.suffix_palindrome_count_as_last_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.empty_last_palindrome_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.sum_singleton_palindrome_counts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.sum_letter_defects": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.sum_letter_defects_alphabet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.full_count_iff_letter_defects_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.palindrome_singleton_suffix_iff_cons": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.binary_singleton_palindrome_gap_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.binary_letter_defect_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.full_count_letter_defect_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.two_transports_force_full_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.replicate_prefix_before_expansion": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.framed_prefix_strip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.right_padded_expansion_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.framed_not_prefix_at_separator": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.framed_infix_replicate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.framed_infix_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.framedGaps_reverse": [
+      "propext"
+    ],
+    "RichWords.framed_initial_padding_unique": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.framedGaps_eq_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.framedGaps_palindrome_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.framed_palindrome_membership_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.mixed_palindrome_framed_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.mem_le_gapMaximum": [
+      "propext"
+    ],
+    "RichWords.threshold_marked_nonempty": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.unary_infix_replicate": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.unary_expansion_infix_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.framedGapPalImage_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.mixedGapPalindromes_nodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.mem_mixedGapPalindromes_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.unaryGapPalindromes_nodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.mem_unaryGapPalindromes_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.unaryGapPalindromes_avoid_separator": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.expansion_palindrome_image_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.thresholdPalCover_nodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.no_separator_eq_replicate": [
+      "propext"
+    ],
+    "RichWords.mem_thresholdPalCover_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.threshold_palindrome_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.threshold_indicator_sum": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.threshold_count_sum": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.threshold_count_positive": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.sum_map_one_nat": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.threshold_defect_budget": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.threshold_gap_defect_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.opposite_gap_threshold_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.thresholdDefectSum_zero_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_expansion_iff_threshold_defects": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_starts": [],
+    "RichWords.gap_prefix_unique": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_injective": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_append_singleton": [
+      "propext"
+    ],
+    "RichWords.expandGaps_reverse": [
+      "propext"
+    ],
+    "RichWords.expandGaps_palindrome_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.gap_prefix_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.gap_runs_prefix_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_prefix_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_skip_opposite": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_infix_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_skip_opposite_right": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_padded_infix_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.binary_gap_normal_form": [
+      "propext"
+    ],
+    "RichWords.opposite_prefix_zero": [
+      "propext"
+    ],
+    "RichWords.palindrome_gap_expansion": [
+      "propext"
+    ],
+    "RichWords.gapsAfter_skip": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.letterGaps_skip": [
+      "propext"
+    ],
+    "RichWords.gapsAfter_replicate": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.letterGaps_replicate": [
+      "propext"
+    ],
+    "RichWords.gapsAfter_expansion": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.letterGaps_expansion": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.letterGaps_padded": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.gap_normal_form_of_mem": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.letterGaps_of_not_mem": [
+      "propext"
+    ],
+    "RichWords.expandGaps_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.letterGaps_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.mem_gapPalImage_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_eq_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.gapPalImage_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.gapPalCover_nodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.mem_gapPalCover_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.gapPalCover_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.gap_palindrome_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.binary_letter_counts": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.binary_gap_defect_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.binary_rich_iff_gap_counts": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.palindromicFactors_reverse_members": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.palindromicFactors_reverse_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.full_palindrome_count_reverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.full_palindrome_count_suffix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.full_palindrome_count_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.repeatWord_length": [
+      "propext"
+    ],
+    "RichWords.repeatWord_sublist": [],
+    "RichWords.repeated_nonrich_supersequence_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.leaf_contraction_period_certificate": [],
+    "RichWords.leaf_contraction_image_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.leaf_contraction_forbidden_certificate": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.leaf_contraction_power_embedding": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.leaf_contraction_repair_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_reverse_membership": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_reverse_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_defect_reverse": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_defect_append_singleton_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_defect_append_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_defect_prepend_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_defect_factor_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_zero_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_projection_failure": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.mem_markedPalindromeInteriors_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.markedPalindromeInteriors_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_membership_append": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.new_marked_interior_suffix": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.new_marked_interior_eq_of_length_le": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.new_marked_interior_unique": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.at_most_one_new_marked_interior": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_extension_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.unmarked_append_interior_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.new_marked_interior_prior_mark": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_count_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_defect_add_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.marked_interior_empty_of_at_most_one_mark": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.wrapped_factor_strip": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.factor_has_wrapped_extension": [
+      "propext"
+    ],
+    "RichWords.all_marked_interior_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.all_marked_interior_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_word_can_have_positive_marked_defect": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.prefixes_append_singleton": [
+      "propext"
+    ],
+    "RichWords.nodup_same_members_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.new_palindrome_suffix_test": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.new_palindrome_membership": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.new_palindrome_filter_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.suffix_occurrence_append": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.full_count_palindrome_occurrences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.same_palindrome_set_occurrences": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.full_count_maximal_palindrome_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_pair_gaps_injective_layout": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_pair_block_mass": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_family_choice_properties": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_family_choices_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_family_choices_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_family_count_lower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_perm_tail_zero_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_permutation_zero_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_complement_ones": [
+      "propext"
+    ],
+    "RichWords.ordered_permutation_end": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_permutation_family_valid": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_permutation_family_size": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_permutation_product_lower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_marked_interior_prefix_letters": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_marked_endpoint_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_full_guard_interiors": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_disjoint_rich_append": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_marked_rich_suffix_glue": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_singleton_marked_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_marked_congr": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_all_marked_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_unmarked_prefix_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_pair_label_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_pair_label_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_pair_gaps_lower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_pair_chain_full_and_thresholds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.ordered_pair_binary_expansion_rich": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permCodeWord_palindrome": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permCodeWord_nonempty": [
+      "propext"
+    ],
+    "RichWords.perm_parameter_at": [
+      "propext"
+    ],
+    "RichWords.permCodeTuple_markers": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permCodeWord_eq_data": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permCodeWord_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.expandGaps_zero_prefix": [
+      "propext"
+    ],
+    "RichWords.expandGaps_zeros": [
+      "propext"
+    ],
+    "RichWords.replicate_cons_join": [
+      "propext"
+    ],
+    "RichWords.permCodeWord_direct": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permTail_prefix": [
+      "propext"
+    ],
+    "RichWords.permTail_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWord_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.middle_infix": [],
+    "RichWords.trim_runs_infix": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permWindow_occurs": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWindow_occurs": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.window_high_infix": [
+      "propext"
+    ],
+    "RichWords.window_low_infix": [
+      "propext"
+    ],
+    "RichWords.window_short_infix": [
+      "propext"
+    ],
+    "RichWords.window_long_infix": [
+      "propext"
+    ],
+    "RichWords.permCodeWord_occurs": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.nodup_map_on": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.mem_permCodeRows": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permCodeRows_nodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.mem_permCodes": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permCodes_nodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permCodeRows_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permLowWide_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.map_range_getElem_self": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.sum_replicate_nat": [
+      "propext"
+    ],
+    "RichWords.permCodes_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWord_rich": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permTail_injective_same_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWord_injective_same_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationParameters_sum": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.nat_sum_perm": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationParameters_bounds": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWord_standard_rich": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWord_standard_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWord_family_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.insertPositions_length": [
+      "propext"
+    ],
+    "RichWords.insertPositions_perm": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.insertPositions_filter": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.insertPositions_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationLists_valid": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationLists_nodup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.flatMap_length_constant": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationLists_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permutation_factorial_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permCodeWord_eq_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permTail_suffix": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWord_padded_zero_factor": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.permutationWord_padded_rich": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.permutation_factorial_lower_bound_all_lengths": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.palindromic_factor_append_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.full_palindrome_count_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.full_count_extension_has_new_palindrome": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.palindrome_membership_append": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.shared_first_letter_new_palindrome": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.disjoint_new_palindromes_distinct_letters": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.binary_three_branches_not_disjoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.mem_prefixes_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.mem_factorOccurrences_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.mem_palindromicFactors_iff": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.palindrome_reverse_iff": [
+      "propext"
+    ],
+    "RichWords.empty_rich": [],
+    "RichWords.singleton_zero_rich": [],
+    "RichWords.alternating_three_rich": [],
+    "RichWords.first_nonrich": [],
+    "RichWords.counts_zero_through_eight": [],
+    "RichWords.nodup_eraseDups": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.palindromicFactors_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.mem_allWords_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.allWords_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.new_palindrome_is_suffix": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.new_palindrome_eq_of_suffix": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.new_palindrome_unique": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.at_most_one_new_palindromic_factor": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.nodup_subset_length_le": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.palindromic_factor_extension_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.palindromic_factor_count_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.map_word_eq_iff": [
+      "propext"
+    ],
+    "RichWords.prefixes_map_word": [
+      "propext"
+    ],
+    "RichWords.factors_map_word": [
+      "propext"
+    ],
+    "RichWords.palindrome_map_word_iff": [
+      "propext"
+    ],
+    "RichWords.palindromicFactors_map_membership": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.palindromic_count_injective_map": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.palindromeDefect_injective_map": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.bitGap_injective": [
+      "propext"
+    ],
+    "RichWords.protected_as_gaps": [
+      "propext"
+    ],
+    "RichWords.protected_same_gaps": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.protected_other_gapsAfter": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.protected_other_gaps": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.protected_same_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.protected_other_defect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.protected_defect_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.rich_iff_defect_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.protected_rich_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "RichWords.protected_injective": [
+      "propext",
+      "Quot.sound"
+    ],
+    "RichWords.protected_length": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "configuration_sha256": {
+    "lean-toolchain": "54727eec5cba149c18842e6deb5c41b369d66455c93ce135d7d5347c782b2325",
+    "lakefile.toml": "20a399de6cd41027c9d0bd933a9f2410d76852b3fb37a79bfa3a5f6c0f083fcb",
+    "lake-manifest.json": "e82554eae7e2792d411431290df072abc7f943eba9b3e416f7d8ab51eccb105c",
+    "verify.py": "64fc10359949ce3d38425e1f396384386c18e7d20c6f3323ba321963007a40f0"
+  },
+  "dependency_revisions": {
+    "mathlib": "c5ea00351c28e24afc9f0f84379aa41082b1188f",
+    "plausible": "a456461b368b71d2accd95234832cd9c174b5437",
+    "LeanSearchClient": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+    "importGraph": "515cf9d0c00ece5e661f6de4326a53dedc1e8ea1",
+    "proofwidgets": "a84b3e2475d5c5ab979567b1ad8aea21b764bcf8",
+    "aesop": "558915ae105bfd8074e22d597613d1961822adc2",
+    "Qq": "a6e6c34c4ef182f83b219a3a5a385f51f44bdc4c",
+    "batteries": "32dc18cde3684679f3c003de608743b57498c56f",
+    "Cli": "6b907cf12b2e445ccb7c24bc208ef04a1f39e84c"
+  },
+  "scope": "Lean definitions and theorems only; does not certify correspondence with every line of the paper or novelty"
+}

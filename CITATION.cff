@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying preprint when using this work."
+title: "On a counting conjecture for binary rich words"
+authors:
+  - family-names: Glass
+    given-names: Max
+type: article
+date-released: 2026-11-06
+url: "https://github.com/glasss13/rich-word-counting"
